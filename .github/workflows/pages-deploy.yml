@@ -47,7 +47,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ${{ inputs.tag }}   
+          ref: ${{ inputs.tag }}
+      - name: Install Requirements
+        run: | 
+          pip install -r ./requirements.txt
       - name: Build MkDocs
         run: |
           mkdocs build
